@@ -1,0 +1,138 @@
+.main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: transparent;
+  z-index: 1000;
+  padding: 0;
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+.main-nav.scrolled {
+  background: #00152e;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  /* padding: 1.5rem 4vw 0.5rem 4vw; */
+}
+
+.nav-logo {
+  height: 3rem;
+  transition: transform 0.3s ease;
+}
+
+.main-nav.scrolled .nav-logo {
+  transform: scale(0.9);
+}
+
+.nav-links {
+  /* display: flex; */
+  /* gap: 2.5rem; */
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+.main-nav.scrolled .nav-links a {
+  color: #b3e0ff;
+}
+
+.nav-links a:hover {
+  color: #4ea1f7;
+  opacity: 1;
+}
+
+.navbar-toggler {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  margin-right: 0.5rem;
+  z-index: 1100;
+}
+
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 28px;
+  height: 3px;
+  background-color: #b3e0ff;
+  position: relative;
+  border-radius: 2px;
+  transition: background 0.3s;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 28px;
+  height: 3px;
+  background-color: #b3e0ff;
+  border-radius: 2px;
+  transition: transform 0.3s, top 0.3s, bottom 0.3s;
+}
+
+.navbar-toggler-icon::before {
+  top: -9px;
+}
+
+.navbar-toggler-icon::after {
+  bottom: -9px;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: #00152e;
+    flex-direction: column !important;
+    align-items: center;
+    width: 100vw;
+    padding: 1rem 0;
+    display: none;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    z-index: 1001;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .navbar-toggler {
+    display: block;
+  }
+  .nav-links li {
+    margin: 0.5rem 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .navbar-toggler {
+    display: none;
+  }
+  .nav-links {
+    position: static;
+    flex-direction: row !important;
+    background: none;
+    box-shadow: none;
+    width: auto;
+    padding: 0;
+    display: flex !important;
+  }
+} 

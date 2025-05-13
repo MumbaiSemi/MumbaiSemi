@@ -1,0 +1,163 @@
+.home-section {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: #00152e;
+  /* Electric circuit SVG background with straight, linear lines */
+  background-image: url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" viewBox="0 0 1366 768" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="%230a2a47" stroke-width="2" opacity="0.5">  <line x1="0" y1="100" x2="1366" y2="100" />  <line x1="0" y1="200" x2="1366" y2="200" />  <line x1="0" y1="300" x2="1366" y2="300" />  <line x1="0" y1="400" x2="1366" y2="400" />  <line x1="0" y1="500" x2="1366" y2="500" />  <line x1="0" y1="600" x2="1366" y2="600" />  <line x1="200" y1="0" x2="200" y2="768" />  <line x1="400" y1="0" x2="400" y2="768" />  <line x1="600" y1="0" x2="600" y2="768" />  <line x1="800" y1="0" x2="800" y2="768" />  <line x1="1000" y1="0" x2="1000" y2="768" />  <line x1="1200" y1="0" x2="1200" y2="768" />  <line x1="0" y1="0" x2="1366" y2="768" />  <line x1="1366" y1="0" x2="0" y2="768" />  <line x1="0" y1="384" x2="1366" y2="384" />  <line x1="683" y1="0" x2="683" y2="768" />  <circle cx="683" cy="384" r="7" fill="%230a2a47" opacity="0.7"/></g></svg>');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.home-content {
+  position: relative;
+  z-index: 1;
+  margin-left: 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100vh;
+}
+
+.home-text h1 {
+  font-family: "Oxanium", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #2196f3;
+  font-size: 2.2rem;
+  line-height: 1.2;
+  text-align: left;
+  max-width: 90vw;
+  word-break: break-word;
+}
+
+.mouse-follower {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  background: rgba(33, 150, 243, 0.3);
+  border: 2px solid #2196f3;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, background 0.3s;
+  z-index: 9999;
+}
+
+.home-section:hover .mouse-follower {
+  width: 50px;
+  height: 50px;
+  background: rgba(33, 150, 243, 0.1);
+}
+
+.glow-effect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(33, 150, 243, 0.15) 0%,
+    rgba(33, 150, 243, 0.1) 25%,
+    rgba(33, 150, 243, 0.05) 50%,
+    transparent 70%
+  );
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.home-section:hover .glow-effect {
+  opacity: 1;
+}
+
+.hover-underline {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.hover-underline:hover {
+  transform: scale(1.05);
+}
+
+.hover-underline::after,
+.hover-underline::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #6a00ff, #00ffff);
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease-out;
+}
+
+.hover-underline::before {
+  top: -5px;
+  transform-origin: left;
+}
+
+.hover-underline:hover::after,
+.hover-underline:hover::before {
+  transform: scaleX(1);
+}
+
+.home-chip-img {
+  max-width: 320px;
+  width: 80vw;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+  .home-text h1 {
+    font-size: 1.5rem;
+    max-width: 95vw;
+  }
+  .home-chip-img {
+    max-width: 220px;
+    width: 90vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-section {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+  .home-text h1 {
+    font-size: 1.1rem;
+    max-width: 98vw;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .home-chip-img {
+    max-width: 150px;
+    width: 95vw;
+  }
+  .mouse-follower {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-section {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+  .home-text h1 {
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
+  }
+  .home-chip-img {
+    max-width: 100px;
+    width: 98vw;
+  }
+} 
