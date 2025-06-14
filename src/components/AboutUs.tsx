@@ -182,14 +182,6 @@ const AboutUs: React.FC = () => {
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                   </div>
-                  <button className="carousel-control-prev mb-3" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Previous</span>
-                  </button>
-                  <button className="carousel-control-next mb-3" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Next</span>
-                  </button>
                 </div>
               </div>
             </div>
@@ -198,7 +190,7 @@ const AboutUs: React.FC = () => {
 
         {/* Team Section */}
         <div className="container">
-          <h3 className="mb-5 fw-bold text-left subsubtitle" style={{ color: '#0d2957' }}>Meet the Team</h3>
+          <h3 className="my-5 fw-bold text-left subsubtitle" style={{ color: '#0d2957' }}>Meet the Team</h3>
           <div className="row justify-content-center">
             {teamMembers.map((member, index) => (
               <TeamMember key={index} {...member} />
@@ -224,43 +216,25 @@ const AboutUs: React.FC = () => {
         .about-image .card:hover .card-img-overlay {
           opacity: 1;
         }
-        .carousel-control-prev,
-        .carousel-control-next {
-          width: 10%;
-          opacity: 1;
-        }
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-          background-color: #0d6efd;
-          border-radius: 50%;
-          padding: 1rem;
-          width: 2.5rem;
-          height: 2.5rem;
-          background-size: 50%;
-          transition: all 0.3s ease;
-        }
-        .carousel-control-prev:hover .carousel-control-prev-icon,
-        .carousel-control-next:hover .carousel-control-next-icon {
-          background-color: #0b5ed7;
-          transform: scale(1.1);
-        }
         .carousel-indicators {
-          margin-top: 1rem;
+          margin-top: 2rem;
+          gap: 1rem;
         }
         .carousel-indicators button {
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
-          background-color: #0d6efd;
-          opacity: 0.5;
+          width: 40px;
+          height: 6px;
+          border-radius: 3px;
+          background-color: rgb(155, 202, 249);
+          border: none;
           transition: all 0.3s ease;
         }
         .carousel-indicators button.active {
-          opacity: 1;
-          transform: scale(1.2);
+          background-color: rgb(52, 143, 254);
+          transform: scale(1.1);
         }
         .carousel-indicators button:hover {
-          opacity: 0.8;
+          background-color: rgb(52, 143, 254);
+          transform: scale(1.05);
         }
         @media (max-width: 768px) {
           .about-content {

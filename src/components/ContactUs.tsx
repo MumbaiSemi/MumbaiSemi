@@ -17,7 +17,7 @@ const ContactUs: React.FC = () => {
                   <i className="bi bi-envelope-fill fs-3 me-3" style={{ color: '#0d6efd' }}></i>
                   <div>
                     <h5 className="mb-1" style={{ color: '#0d2957' }}>Email</h5>
-                    <a href="mailto:support@mumbaisemi.com" className="text-decoration-none" style={{ color: '#0d6efd' }}>
+                    <a href="mailto:support@mumbaisemi.com" className="text-decoration-none d-inline-block text-truncate" style={{ color: '#0d6efd', maxWidth: '100%' }}>
                      support@mumbaisemi.com
                     </a>
                   </div>
@@ -38,10 +38,19 @@ const ContactUs: React.FC = () => {
 
                 <div className="d-flex align-items-center">
                   <i className="bi bi-linkedin fs-3 me-3" style={{ color: '#0d6efd' }}></i>
-                  <div>
+                  <div className="w-100">
                     <h5 className="mb-1" style={{ color: '#0d2957' }}>LinkedIn</h5>
-                    <a href="https://www.linkedin.com/company/mumbaisemi/" target="_blank" className="text-decoration-none" style={{ color: '#0d6efd' }} rel="noopener">
-                    www.linkedin.com/company/mumbaisemi
+                    <a 
+                      href="https://www.linkedin.com/company/mumbaisemi/" 
+                      target="_blank" 
+                      className="text-decoration-none d-inline-block text-truncate" 
+                      style={{ 
+                        color: '#0d6efd',
+                        maxWidth: '100%'
+                      }} 
+                      rel="noopener"
+                    >
+                      www.linkedin.com/company/mumbaisemi
                     </a>
                   </div>
                 </div>

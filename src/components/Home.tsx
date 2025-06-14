@@ -26,7 +26,7 @@ const Home: React.FC = () => {
         <div className="left-half d-flex flex-column align-items-start justify-content-center" style={{ minHeight: '100vh', zIndex: 1 }}>
           <div
             style={{
-              color: '#037ae7',
+              color: '#017ce7',
               fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
               fontWeight: 400,
               marginBottom: '2.5rem',
