@@ -1,14 +1,26 @@
 .home-section {
   position: relative;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   background: #00152e;
-  /* Electric circuit SVG background with straight, linear lines */
-  background-image: url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" viewBox="0 0 1366 768" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="%230a2a47" stroke-width="2" opacity="0.5">  <line x1="0" y1="100" x2="1366" y2="100" />  <line x1="0" y1="200" x2="1366" y2="200" />  <line x1="0" y1="300" x2="1366" y2="300" />  <line x1="0" y1="400" x2="1366" y2="400" />  <line x1="0" y1="500" x2="1366" y2="500" />  <line x1="0" y1="600" x2="1366" y2="600" />  <line x1="200" y1="0" x2="200" y2="768" />  <line x1="400" y1="0" x2="400" y2="768" />  <line x1="600" y1="0" x2="600" y2="768" />  <line x1="800" y1="0" x2="800" y2="768" />  <line x1="1000" y1="0" x2="1000" y2="768" />  <line x1="1200" y1="0" x2="1200" y2="768" />  <line x1="0" y1="0" x2="1366" y2="768" />  <line x1="1366" y1="0" x2="0" y2="768" />  <line x1="0" y1="384" x2="1366" y2="384" />  <line x1="683" y1="0" x2="683" y2="768" />  <circle cx="683" cy="384" r="7" fill="%230a2a47" opacity="0.7"/></g></svg>');
+  background-image: url('../assets/home-background-with-logo.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.left-half {
+  width: 50%;
+  height: 100vh;
+  position: relative;
+  padding: var(--section-padding);
+}
+
+.right-half {
+  width: 50%;
+  height: 100vh;
+  position: relative;
 }
 
 .home-content {
@@ -20,6 +32,7 @@
   align-items: flex-start;
   justify-content: center;
   height: 100vh;
+  max-width: var(--content-width);
 }
 
 .home-text h1 {
@@ -28,10 +41,10 @@
   font-weight: 400;
   font-style: normal;
   color: #2196f3;
-  font-size: 2.2rem;
+  font-size: var(--font-size-h1);
   line-height: 1.2;
   text-align: left;
-  max-width: 90vw;
+  max-width: 90%;
   word-break: break-word;
 }
 
@@ -52,26 +65,6 @@
   width: 50px;
   height: 50px;
   background: rgba(33, 150, 243, 0.1);
-}
-
-.glow-effect {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(33, 150, 243, 0.15) 0%,
-    rgba(33, 150, 243, 0.1) 25%,
-    rgba(33, 150, 243, 0.05) 50%,
-    transparent 70%
-  );
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  opacity: 0;
-}
-
-.home-section:hover .glow-effect {
-  opacity: 1;
 }
 
 .hover-underline {
@@ -109,39 +102,54 @@
 }
 
 .home-chip-img {
-  max-width: 320px;
-  width: 80vw;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+  display: none;
 }
 
 @media (max-width: 992px) {
-  .home-text h1 {
-    font-size: 1.5rem;
-    max-width: 95vw;
+  .home-section {
+    flex-direction: column;
   }
-  .home-chip-img {
-    max-width: 220px;
-    width: 90vw;
+  
+  .left-half, .right-half {
+    width: 100%;
+    height: 50vh;
+  }
+
+  .left-half {
+    padding: var(--section-padding);
+  }
+
+  .home-content {
+    margin-left: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-text h1 {
+    text-align: center;
+    max-width: 95%;
   }
 }
 
 @media (max-width: 768px) {
-  .home-section {
-    padding-top: 4rem;
-    padding-bottom: 2rem;
+  .left-half {
+    height: 100vh;
+    padding: var(--section-padding);
   }
+
+  .right-half {
+    display: none;
+  }
+
   .home-text h1 {
-    font-size: 1.1rem;
-    max-width: 98vw;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    font-size: var(--font-size-h1);
   }
-  .home-chip-img {
-    max-width: 150px;
-    width: 95vw;
+
+  .subtitle {
+    font-size: var(--font-size-base);
+    max-width: 90%;
   }
+
   .mouse-follower {
     display: none;
   }
@@ -149,15 +157,12 @@
 
 @media (max-width: 480px) {
   .home-section {
-    padding-top: 2rem;
-    padding-bottom: 1rem;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
   }
+  
   .home-text h1 {
-    font-size: 0.95rem;
-    padding: 0 0.5rem;
-  }
-  .home-chip-img {
-    max-width: 100px;
-    width: 98vw;
+    font-size: var(--font-size-h1);
+    padding: 0;
   }
 } 

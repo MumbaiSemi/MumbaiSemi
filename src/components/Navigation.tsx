@@ -28,11 +28,10 @@ const Navigation: React.FC = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <ul className={`nav-links d-flex mb-0 me-2 me-md-5 ${menuOpen ? 'open' : ''}`}>
-          <li><a href="#home" className="mx-3" onClick={handleNavClick}>Home</a></li>
-          <li><a href="#products" className="mx-3" onClick={handleNavClick}>Products</a></li>
-          <li><a href="#about" className="mx-3" onClick={handleNavClick}>About Us</a></li>
-          <li><a href="#careers" className="mx-3" onClick={handleNavClick}>Careers</a></li>
-          <li><a href="#contact" className="mx-3" onClick={handleNavClick}>Contact Us</a></li>
+          <li><a href="#home" className="mx-2" onClick={handleNavClick}>Home</a></li>
+          <li><a href="#products" className="mx-2" onClick={handleNavClick}>Products</a></li>
+          <li><a href="#about" className="mx-2" onClick={handleNavClick}>About</a></li>
+          <li><a href="#contact" className="mx-2" onClick={handleNavClick}>Contact</a></li>
         </ul>
       </nav>
     </nav>

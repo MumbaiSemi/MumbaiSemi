@@ -4,18 +4,15 @@ import './Home.css';
 
 const Home: React.FC = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  mousePosition
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const x = (e.clientX / window.innerWidth) * 100;
       const y = (e.clientY / window.innerHeight) * 100;
       setMousePosition({ x, y });
-      
-      // Update CSS variables for the glow effect
       document.documentElement.style.setProperty('--mouse-x', `${x}%`);
       document.documentElement.style.setProperty('--mouse-y', `${y}%`);
     };
-
     window.addEventListener('mousemove', handleMouseMove);
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
@@ -23,38 +20,29 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <section id="home" className="home-section">
-      <div className="glow-effect"></div>
-      <div className="container-fluid h-100">
-        <div className="row h-100 align-items-center justify-content-center flex-column-reverse flex-md-row text-center text-md-start">
-          <div className="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center align-items-md-start mb-4 mb-md-0">
-            <div className="home-text w-100">
-              <h1 className="text-primary hover-underline mx-2 mx-md-5">
-                Shaping the future of advanced technologies with high-performance chips
-              </h1>
-            </div>
-          </div>
-          <div className="col-12 col-md-6 d-flex justify-content-center align-items-center mb-4 mb-md-0">
-            <div className="home-text">
-              <h1 className="m-0">
-                <img 
-                  src="src/assets/home-logo.png" 
-                  alt="MumbaiSemi" 
-                  className="img-fluid home-chip-img" 
-                  style={{ 
-                    transform: 'rotate(315deg)', 
-                    maxWidth: '320px', 
-                    width: '80vw',
-                    transition: 'transform 0.3s ease, filter 0.3s ease'
-                  }} 
-                />
-              </h1>
-            </div>
+    <>
+      <div className="global-glow-effect"></div>
+      <section id="home" className="home-section d-flex">
+        <div className="left-half d-flex flex-column align-items-start justify-content-center" style={{ minHeight: '100vh', zIndex: 1 }}>
+          <div
+            style={{
+              color: '#037ae7',
+              fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
+              fontWeight: 400,
+              marginBottom: '2.5rem',
+              fontFamily: 'Oxanium, sans-serif',
+              textAlign: 'left',
+              width: '100%',
+              maxWidth: '650px'
+            }}
+            className="hover-underline home-text"
+          >
+            Shaping the future of advanced technologies with high-performance chips
           </div>
         </div>
-      </div>
-
-    </section>
+        <div className="right-half"></div>
+      </section>
+    </>
   );
 };
 

@@ -2,9 +2,9 @@ import React from 'react';
 
 const ContactUs: React.FC = () => {
   return (
-    <section id="contact" style={{ minHeight: '100vh', background: '#f7fafd' }}>
-      <div className="container py-5">
-        <h2 className="subtitle mb-5 fw-bold text-center">Contact Us</h2>
+    <section id="contact" style={{ minHeight: '100vh', background: '#eaf1fb' }}>
+      <div className="container pt-3">
+        <h2 className="subtitle mb-5 pt-5 fw-bold text-center">Contact Us</h2>
         
         <div className="row g-4">
           {/* Contact Information Card */}
@@ -17,8 +17,8 @@ const ContactUs: React.FC = () => {
                   <i className="bi bi-envelope-fill fs-3 me-3" style={{ color: '#0d6efd' }}></i>
                   <div>
                     <h5 className="mb-1" style={{ color: '#0d2957' }}>Email</h5>
-                    <a href="mailto:mumbaisemiconductor@gmail.com" className="text-decoration-none" style={{ color: '#0d6efd' }}>
-                      mumbaisemiconductor@gmail.com
+                    <a href="mailto:support@mumbaisemi.com" className="text-decoration-none" style={{ color: '#0d6efd' }}>
+                     support@mumbaisemi.com
                     </a>
                   </div>
                 </div>

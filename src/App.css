@@ -1,4 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --content-width: min(90%, 1200px);
+  --section-padding: clamp(1rem, 5vw, 4rem);
+  --font-size-base: clamp(1rem, 1.5vw, 1.2rem);
+  --font-size-h1: clamp(2rem, 4vw, 3.5rem);
+  --font-size-h2: clamp(1.5rem, 3vw, 2.5rem);
+  --font-size-h3: clamp(1.2rem, 2.5vw, 2rem);
+}
 
 * {
   margin: 0;
@@ -6,15 +15,26 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
 #root {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   padding: 0;
   text-align: left;
 }
 
 .app {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   padding: 0;
   font-family: "Poppins", sans-serif;
@@ -24,17 +44,44 @@
 }
 
 main {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
 }
 
 section {
-  width: 100vw;
+  width: 100%;
+  padding: var(--section-padding) 0;
   scroll-snap-align: start;
+}
+
+.container {
+  width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Oxanium", sans-serif;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+
+p {
+  margin-bottom: 1rem;
+  max-width: 65ch;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
+  :root {
+    --content-width: 95%;
+    --section-padding: 1rem;
+  }
+  
   .app {
     padding: 0;
   }
@@ -74,4 +121,12 @@ section {
 
 .read-the-docs {
   color: #888;
+}
+
+.subtitle {
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  font-family: "Oxanium", sans-serif;
+  color: #0d2957;
+  line-height: 1.4;
+  margin-bottom: 2rem;
 }

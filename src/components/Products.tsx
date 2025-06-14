@@ -6,8 +6,8 @@ const cardData = [
     title: 'Navigation',
     description: 'Our next-gen RF front-ends supporting multi-constellation GNSS signals from NavIC, GPS, Galileo & BeiDou.',
     links: [
-      { name: 'DhruvaPro', desc: 'Silicon-proven GNSS RFIC' },
-      { name: 'DhruvaUltraPro', desc: 'Coming soon...' },
+      { name: 'DhruvaPro', href: "#aboutdhruvapro", desc: 'Silicon-proven GNSS RFIC' },
+      { name: 'DhruvaUltra', href: "#", desc: 'Coming soon...' },
     ],
   },
   {
@@ -43,30 +43,33 @@ const Products: React.FC = () => {
       {/* Section 1: Product Cards */}
       <section className="d-flex align-items-center justify-content-center" style={{ minHeight: '100vh' }}>
         <div className="container py-5">
-          <h2 className="subtitle mb-5 fw-bold text-center">Applications & Products</h2>
-          <div className="row g-4">
+          <h2 className="subtitle mb-5 fw-bold text-center" style={{ fontSize: '2.5rem' }}>Applications & Products</h2>
+          <div className="row justify-content-center g5">
             {cardData.map((card, idx) => (
-              <div className="col-12 col-md-6 col-lg-3" key={card.title} style={fadeInStyles(idx)}>
+              <div className="col-12 col-lg-6 col-xl-3 d-flex justify-content-center my-4 mx-0 px-3" key={card.title} style={fadeInStyles(idx)}>
                 <div
-                  className="card h-100 p-4 border-0 shadow product-card"
+                  className="card h-100 p-5 border-0 shadow product-card"
                   style={{
-                    borderRadius: '1.5rem',
+                    borderRadius: '2rem',
                     background: 'linear-gradient(135deg, #e3f0ff 0%, #f8fbff 100%)',
                     transition: 'transform 0.3s, box-shadow 0.3s',
                     overflow: 'hidden',
                     position: 'relative',
+                    minHeight: '450px',
+                    maxWidth: '400px',
+                    width: '100%'
                   }}
                 >
                   <div className="text-center">
-                    <i className={`bi ${card.icon} product-icon`} style={{ fontSize: '2.8rem', color: '#0d6efd', marginBottom: '1rem', transition: 'color 0.3s' }}></i>
-                    <div className="product-title fw-bold" style={{ fontSize: '1.3rem', color: '#0d2957', marginBottom: '0.7rem' }}>{card.title}</div>
+                    <i className={`bi ${card.icon} product-icon`} style={{ fontSize: '3.5rem', color: '#0d6efd', marginBottom: '1.5rem', transition: 'color 0.3s' }}></i>
+                    <div className="product-title fw-bold" style={{ fontSize: '1.4rem', color: '#0d2957', marginBottom: '1rem' }}>{card.title}</div>
                   </div>
-                  <div className="mb-3 text-secondary" style={{ minHeight: 120 }}>{card.description}</div>
+                  <div className="mb-4 text-secondary" style={{ minHeight: 140, fontSize: '1rem', lineHeight: '1.6' }}>{card.description}</div>
                   <div>
                     {card.links.map(link => (
-                      <div key={link.name} className='mt-2'>
-                        <a href="#" className="product-link" style={{ color: '#0d6efd', fontWeight: 600, textDecoration: 'none', transition: 'color 0.2s' }}>{link.name}</a>
-                        <div className="small text-muted">{link.desc}</div>
+                      <div key={link.name} className='mt-3'>
+                        <a href={link.href} className="product-link" style={{ color: '#0d6efd', fontWeight: 600, textDecoration: 'none', transition: 'color 0.2s', fontSize: '1.2rem' }}>{link.name}</a>
+                        <div className="small text-muted" style={{ fontSize: '1rem' }}>{link.desc}</div>
                       </div>
                     ))}
                   </div>
@@ -78,11 +81,11 @@ const Products: React.FC = () => {
       </section>
 
       {/* Section 2: Info + Image */}
-      <section className="d-flex align-items-center justify-content-center" style={{ minHeight: '100vh', background: '#eaf1fb' }}>
+      <section id="aboutdhruvapro" className="d-flex align-items-center justify-content-center" style={{ minHeight: '100vh', background: '#eaf1fb' }}>
         <div className="container">
           <div className="row align-items-center">
-            <h2 className="fw-bold mb-4" style={{ color: '#0d2957', fontSize: '2rem' }}>About DhruvaPro</h2>
-            <div className="col-lg-7 mb-4 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start text-center text-lg-start">
+            <h3 className="fw-bold m-4 subsubtitle" style={{ color: '#0d2957' }}>About DhruvaPro</h3>
+            <div className="col-lg-8 mb-4 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start text-center text-lg-start">
               <div className="about-dhruvapro-content" style={{ opacity: 0, transform: 'translateY(30px)', animation: 'fadeInUp 0.7s forwards 0.3s' }}>
                 <div className="card border-0 shadow-sm mb-4 pb-1" style={{ 
                   background: 'linear-gradient(135deg, #e3f0ff 0%, #f8fbff 100%)',
@@ -110,36 +113,14 @@ const Products: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-5 d-flex justify-content-center align-items-center">
-              <div className="about-dhruvapro-image" style={{ 
-                opacity: 0, 
-                transform: 'translateX(30px)', 
-                animation: 'fadeInRight 0.7s forwards 0.5s',
-                position: 'relative'
-              }}>
-                <div className="card shadow border-0" style={{ 
-                  borderRadius: '1rem', 
-                  overflow: 'hidden', 
-                  maxWidth: 520,
-                  transition: 'transform 0.3s ease, box-shadow 0.3s ease'
-                }}>
+            <div className="col-lg-4 d-flex justify-content-center align-items-center">
+              <div className="about-dhruvapro-image" style={{ opacity: 0, transform: 'translateX(30px)', animation: 'fadeInRight 0.7s forwards 0.5s', position: 'relative'}}>
+                <div className="card shadow" style={{ borderRadius: '1rem', overflow: 'hidden', maxWidth: 520, transition: 'transform 0.3s ease, box-shadow 0.3s ease'}}>
                   <img 
-                    src="src/assets/dhruvapro.png" 
-                    alt="DhruvaPro" 
-                    className="img-fluid" 
-                    style={{ 
-                      objectFit: 'cover', 
-                      height: 360, 
-                      width: '100%',
-                      borderRadius: '0.7rem', 
-                      transition: 'transform 0.3s ease'
-                    }} 
+                    src="src/assets/dhruvapro.png" alt="DhruvaPro" className="img-fluid" 
+                    style={{ objectFit: 'contain', height: '100%', width: '100%', borderRadius: '0.7rem', transition: 'transform 0.3s ease'}} 
                   />
-                  <div className="card-img-overlay d-flex align-items-end" style={{ 
-                    background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)',
-                    opacity: 0,
-                    transition: 'opacity 0.3s ease'
-                  }}>
+                  <div className="card-img-overlay d-flex align-items-end" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)',opacity: 0,transition: 'opacity 0.3s ease'}}>
                     <div className="text-white p-4">
                       <h5 className="mb-2">Silicon-Proven GNSS RFIC</h5>
                       <p className="mb-0">Advanced navigation solution for multiple constellations</p>
@@ -176,7 +157,7 @@ const Products: React.FC = () => {
           box-shadow: 0 12px 40px rgba(0,0,0,0.15);
         }
         .about-dhruvapro-image .card:hover img {
-          transform: scale(1.05);
+          transform: scale(1.07);
         }
         .about-dhruvapro-image .card:hover .card-img-overlay {
           opacity: 1;
