@@ -89,7 +89,8 @@ const Navigation: React.FC = () => {
           }
           .nav-links a {
             font-size: 1.2rem;
-            color: #0d2957;
+            color: #b3e0ff;
+            text-shadow: none;
             transition: color 0.3s ease;
             display: block;
             padding: 0.5rem 0;

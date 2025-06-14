@@ -45,14 +45,17 @@ h1 {
 }
 
 .subtitle{
+  width: 100%;
   font-family: "Poppins", sans-serif !important;
   font-optical-sizing: auto;
   font-weight: 400;
   font-size: 2.25rem !important;
   font-style: normal;
   text-transform: uppercase;
-  /* color: #00152e; */
   line-height: 1.2;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
 }
 
 /* .subtitle::after {
