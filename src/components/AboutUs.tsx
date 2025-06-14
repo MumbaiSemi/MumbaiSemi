@@ -1,4 +1,7 @@
 import React from 'react';
+import workAtMumbaiSemiImage from '/assets/workatmumbaisemi.png';
+import vijayaKumarImage from '/assets/VijayaKumarKanchetla.jpg';
+import rajeshZeleImage from "/assets/RajeshZele.jpg"
 
 interface TeamMemberProps {
   name: string;
@@ -51,14 +54,14 @@ const AboutUs: React.FC = () => {
       name: "Vijaya Kumar Kanchetla",
       title: "Co-founder",
       education: "Ph.D., IIT Bombay",
-      image: "src/assets/VijayaKumarKanchetla.jpg",
+      image: vijayaKumarImage,
       linkedinUrl: "https://www.linkedin.com/in/vijay-kumar-kanchetla-58470588/"
     },
     {
       name: "Rajesh Zele",
       title: "Co-founder",
       education: "Ph.D., Carnegie Mellon Univ., PA, USA",
-      image: "src/assets/RajeshZele.jpg",
+      image: rajeshZeleImage,
       linkedinUrl: "https://www.linkedin.com/in/rajeshzele"
     }
   ];
@@ -105,7 +108,7 @@ const AboutUs: React.FC = () => {
               margin: '0 auto'
             }}>
               <img 
-                src="src/assets/workatmumbaisemi.png" 
+                src={workAtMumbaiSemiImage} 
                 alt="Work at MumbaiSemi" 
                 className="img-fluid" 
                 style={{ 

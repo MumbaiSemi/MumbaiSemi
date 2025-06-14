@@ -1,4 +1,5 @@
 import React from 'react';
+import dhruvaProImage from '/assets/dhruvapro.png';
 
 const cardData = [
   {
@@ -117,7 +118,7 @@ const Products: React.FC = () => {
               <div className="about-dhruvapro-image" style={{ opacity: 0, transform: 'translateX(30px)', animation: 'fadeInRight 0.7s forwards 0.5s', position: 'relative'}}>
                 <div className="card shadow" style={{ borderRadius: '1rem', overflow: 'hidden', maxWidth: 520, transition: 'transform 0.3s ease, box-shadow 0.3s ease'}}>
                   <img 
-                    src="src/assets/dhruvapro.png" alt="DhruvaPro" className="img-fluid" 
+                    src={dhruvaProImage} alt="DhruvaPro" className="img-fluid" 
                     style={{ objectFit: 'contain', height: '100%', width: '100%', borderRadius: '0.7rem', transition: 'transform 0.3s ease'}} 
                   />
                   <div className="card-img-overlay d-flex align-items-end" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)',opacity: 0,transition: 'opacity 0.3s ease'}}>
