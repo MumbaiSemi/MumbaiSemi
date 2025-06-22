@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
+import { homeData } from '../data';
 // import './Home.js';
 
 const Home: React.FC = () => {
@@ -37,7 +38,7 @@ const Home: React.FC = () => {
             }}
             className="hover-underline home-text"
           >
-            Shaping the future of advanced technologies with high-performance chips
+            {homeData.mainText}
           </div>
         </div>
         <div className="right-half"></div>

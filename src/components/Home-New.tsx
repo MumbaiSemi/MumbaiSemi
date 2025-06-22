@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
+import { homeNewData } from '../data';
 // import './Home.js';
 
 const Home: React.FC = () => {
@@ -36,7 +37,7 @@ const Home: React.FC = () => {
           marginBottom: '1rem',
           textAlign: 'center'
         }}>
-          MUMBAISEMI
+          {homeNewData.title}
         </h1>
         <div style={{ 
           color: '#e0e6f7', 
@@ -47,9 +48,9 @@ const Home: React.FC = () => {
           textAlign: 'center',
           textTransform: 'capitalize',
           // maxWidth: '800px'
-        }}>
-          Shaping the future of advanced technologies with<br/>high-performance chips
-        </div>
+        }}
+        dangerouslySetInnerHTML={{ __html: homeNewData.subtitle }}
+        />
         <a href="#products" className="btn btn-primary px-5 py-2" style={{ 
           borderRadius: '2rem', 
           fontSize: '1.25rem', 
@@ -58,7 +59,7 @@ const Home: React.FC = () => {
           border: 'none', 
           boxShadow: '0 4px 24px rgba(37,99,235,0.15)'
         }}>
-          LEARN MORE
+          {homeNewData.buttonText}
         </a>
       </div>
       <div className="right-half"></div>

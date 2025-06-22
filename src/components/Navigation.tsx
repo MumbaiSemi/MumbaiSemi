@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Navigation.css';
 import mumbaiSemiLogo from '/assets/mumbaisemi-logo.png';
+import { navigationData } from '../data';
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -48,10 +49,9 @@ const Navigation: React.FC = () => {
           <i className={`bi ${menuOpen ? 'bi-x-lg' : 'bi-list'} fs-3`} style={{ color: 'rgb(52, 143, 254)' }}></i>
         </button>
         <ul className={`nav-links d-flex mb-0 me-2 me-md-5 ${menuOpen ? 'open' : ''}`}>
-          <li><a href="#home" className="mx-2" onClick={handleNavClick}>Home</a></li>
-          <li><a href="#products" className="mx-2" onClick={handleNavClick}>Products</a></li>
-          <li><a href="#about" className="mx-2" onClick={handleNavClick}>About</a></li>
-          <li><a href="#contact" className="mx-2" onClick={handleNavClick}>Contact</a></li>
+          {navigationData.links.map(link => (
+            <li key={link.href}><a href={link.href} className="mx-2" onClick={handleNavClick}>{link.text}</a></li>
+          ))}
         </ul>
       </nav>
 

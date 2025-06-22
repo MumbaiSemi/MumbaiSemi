@@ -2,6 +2,7 @@ import React from 'react';
 import workAtMumbaiSemiImage from '/assets/workatmumbaisemi.png';
 import vijayaKumarImage from '/assets/VijayaKumarKanchetla.jpg';
 import rajeshZeleImage from "/assets/RajeshZele.jpg"
+import { aboutUsData } from '../data';
 
 interface TeamMemberProps {
   name: string;
@@ -49,27 +50,21 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, title, education, image, 
 };
 
 const AboutUs: React.FC = () => {
-  const teamMembers = [
-    {
-      name: "Vijaya Kumar Kanchetla",
-      title: "Co-founder",
-      education: "Ph.D., IIT Bombay",
-      image: vijayaKumarImage,
-      linkedinUrl: "https://www.linkedin.com/in/vijay-kumar-kanchetla-58470588/"
-    },
-    {
-      name: "Rajesh Zele",
-      title: "Co-founder",
-      education: "Ph.D., Carnegie Mellon Univ., PA, USA",
-      image: rajeshZeleImage,
-      linkedinUrl: "https://www.linkedin.com/in/rajeshzele"
+  const teamMembers: TeamMemberProps[] = aboutUsData.team.members.map(member => {
+    if (member.name === "Vijaya Kumar Kanchetla") {
+      return { ...member, image: vijayaKumarImage };
     }
-  ];
+    if (member.name === "Rajesh Zele") {
+      return { ...member, image: rajeshZeleImage };
+    }
+    // This case should ideally not be reached if all members are handled above
+    return { ...member, image: '' };
+  });
 
   return (
     <section id="about" style={{ minHeight: '100vh', background: '#f4f8fc', paddingTop: '80px' }}>
       <div className="container py-5">
-        <h2 className="subtitle mb-5 fw-bold text-center">About Us</h2>
+        <h2 className="subtitle mb-5 fw-bold text-center">{aboutUsData.title}</h2>
 
         {/* What We Do Section */}
         <div className="row align-items-center mb-5">
@@ -80,21 +75,22 @@ const AboutUs: React.FC = () => {
               animation: 'fadeInUp 0.7s forwards 0.3s',
               maxWidth: '95%'
             }}>
-              <h3 className="mb-4 fw-bold subsubtitle" style={{ color: '#0d2957' }}>What We Do</h3>
-              <p style={{ 
-                fontSize: '1rem', 
-                lineHeight: '1.8', 
-                marginBottom: '1.5rem',
-                maxWidth: '100%'
-              }}>
-                We are a fab-less semiconductor company designing high-performance <b>RF, Analog, Mixed-signal, and Digital ICs</b> for advanced communications, AI/ML hardware, autonomous vehicles, low-power IoT, and more. Our core strength lies in developing innovative circuits to address the challenges in chip design.
-              </p>
+              <h3 className="mb-4 fw-bold subsubtitle" style={{ color: '#0d2957' }}>{aboutUsData.whatWeDo.title}</h3>
+              <p
+                style={{
+                  fontSize: '1rem',
+                  lineHeight: '1.8',
+                  marginBottom: '1.5rem',
+                  maxWidth: '100%'
+                }}
+                dangerouslySetInnerHTML={{ __html: aboutUsData.whatWeDo.description1 }}
+              />
               <p style={{ 
                 fontSize: '1rem', 
                 lineHeight: '1.8',
                 maxWidth: '100%'
               }}>
-                We research and innovate to produce disruptive solutions for futuristic challenges to develop high-quality semiconductor chips in India for national and global needs.
+                {aboutUsData.whatWeDo.description2}
               </p>
             </div>
           </div>
@@ -131,51 +127,25 @@ const AboutUs: React.FC = () => {
                 background: 'linear-gradient(135deg, #e3f0ff 0%, #f8fbff 100%)',
                 borderRadius: '1rem',
               }}>
-                <h3 className="mb-4 fw-bold text-center subsubtitle" style={{ color: '#0d2957' }}>Work at MumbaiSemi</h3>
+                <h3 className="mb-4 fw-bold text-center subsubtitle" style={{ color: '#0d2957' }}>{aboutUsData.workAtMumbaiSemi.title}</h3>
                 <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
                   <div className="carousel-inner">
-                    <div className="carousel-item active">
-                      <div className="d-flex justify-content-center">
-                        <p style={{ 
-                          fontSize: '1rem', 
-                          color: '#2c3e50', 
-                          lineHeight: '1.8', 
-                          textAlign: 'center',
-                          maxWidth: '800px',
-                          padding: '0 1rem'
-                        }}>
-                          At MumbaiSemi, we love to work on challenging problems that demand precision, creativity, and excellent technical skills. We collaborate strongly, learn continuously, and take pride in the quality of our work.
-                        </p>
+                    {aboutUsData.workAtMumbaiSemi.carousel.map((text, index) => (
+                      <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
+                        <div className="d-flex justify-content-center">
+                          <p style={{
+                            fontSize: '1rem',
+                            color: '#2c3e50',
+                            lineHeight: '1.8',
+                            textAlign: 'center',
+                            maxWidth: '800px',
+                            padding: '0 1rem'
+                          }}>
+                            {text}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="carousel-item">
-                      <div className="d-flex justify-content-center">
-                        <p style={{ 
-                          fontSize: '1rem', 
-                          color: '#2c3e50', 
-                          lineHeight: '1.8', 
-                          textAlign: 'center',
-                          maxWidth: '800px',
-                          padding: '0 1rem'
-                        }}>
-                          Whether you're just starting your career or have years of tape-outs behind you, you will work alongside people passionate about pushing the limits of chip design.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="carousel-item">
-                      <div className="d-flex justify-content-center">
-                        <p style={{ 
-                          fontSize: '1rem', 
-                          color: '#2c3e50', 
-                          lineHeight: '1.8', 
-                          textAlign: 'center',
-                          maxWidth: '800px',
-                          padding: '0 1rem'
-                        }}>
-                          Diverse perspectives lead to stronger designs. We're proud to be an equal opportunity employer — and we're always looking for curious, driven minds to join us. We want to hear from you if you enjoy solving challenging chip design problems. Please send us a copy of your CV.
-                        </p>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                   <div className="carousel-indicators position-relative mb-0 mt-4">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -190,7 +160,7 @@ const AboutUs: React.FC = () => {
 
         {/* Team Section */}
         <div className="container">
-          <h3 className="my-5 fw-bold text-left subsubtitle" style={{ color: '#0d2957' }}>Meet the Team</h3>
+          <h3 className="my-5 fw-bold text-left subsubtitle" style={{ color: '#0d2957' }}>{aboutUsData.team.title}</h3>
           <div className="row justify-content-center">
             {teamMembers.map((member, index) => (
               <TeamMember key={index} {...member} />

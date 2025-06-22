@@ -1,35 +1,8 @@
 import React from 'react';
 import dhruvaProImage from '/assets/dhruvapro.png';
+import { productsData } from '../data';
 
-const cardData = [
-  {
-    icon: 'bi-geo-alt-fill',
-    title: 'Navigation',
-    description: 'Our next-gen RF front-ends supporting multi-constellation GNSS signals from NavIC, GPS, Galileo & BeiDou.',
-    links: [
-      { name: 'DhruvaPro', href: "#aboutdhruvapro", desc: 'Silicon-proven GNSS RFIC' },
-      { name: 'DhruvaUltra', href: "#", desc: 'Coming soon...' },
-    ],
-  },
-  {
-    icon: 'bi-wifi',
-    title: 'Wireless',
-    description: 'Our advanced transceivers will support next-gen communication standards such as 5G, Wi-Fi 7, Bluetooth 5.x, and more.',
-    links: [],
-  },
-  {
-    icon: 'bi-cpu',
-    title: 'High Speed Communications',
-    description: 'Our innovative PHYs enable high-speed communication between the chips, suitable for latest PCIe and UCIe standards, addressing power and latency issues in AI/ML hardware and data centers.',
-    links: [],
-  },
-  {
-    icon: 'bi-car-front-fill',
-    title: 'Automotive',
-    description: 'Advanced driver-assisted and autonomous driving systems need connected cameras, sensor systems, and high-speed connectivity between these peripherals and the processors. We deliver high-performance silicon chips to address such  needs even in extreme environments.',
-    links: [],
-  },
-];
+const cardData = productsData.cards;
 
 const fadeInStyles = (idx: number) => ({
   opacity: 0,
@@ -44,7 +17,7 @@ const Products: React.FC = () => {
       {/* Section 1: Product Cards */}
       <section className="d-flex align-items-center justify-content-center" style={{ minHeight: '100vh' }}>
         <div className="container py-5">
-          <h2 className="subtitle mb-5 fw-bold text-center" style={{ fontSize: '2.5rem' }}>Applications & Products</h2>
+          <h2 className="subtitle mb-5 fw-bold text-center" style={{ fontSize: '2.5rem' }}>{productsData.title}</h2>
           <div className="row justify-content-center g5">
             {cardData.map((card, idx) => (
               <div className="col-12 col-lg-6 col-xl-3 d-flex justify-content-center my-4 mx-0 px-3" key={card.title} style={fadeInStyles(idx)}>
@@ -85,18 +58,18 @@ const Products: React.FC = () => {
       <section id="aboutdhruvapro" className="d-flex align-items-center justify-content-center" style={{ minHeight: '100vh', background: '#eaf1fb' }}>
         <div className="container">
           <div className="row align-items-center">
-            <h3 className="fw-bold m-4 subsubtitle" style={{ color: '#0d2957' }}>About DhruvaPro</h3>
+            <h3 className="fw-bold m-4 subsubtitle" style={{ color: '#0d2957' }}>{productsData.aboutDhruvaPro.title}</h3>
             <div className="col-lg-8 mb-4 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start text-center text-lg-start">
               <div className="about-dhruvapro-content" style={{ opacity: 0, transform: 'translateY(30px)', animation: 'fadeInUp 0.7s forwards 0.3s' }}>
                 <div className="card border-0 shadow-sm mb-4 pb-1" style={{ 
                   background: 'linear-gradient(135deg, #e3f0ff 0%, #f8fbff 100%)',
                   borderRadius: '1rem',
                 }}>
-                  <p style={{ fontSize: '1rem', color: '#2c3e50', lineHeight: '1.8' }}>
-                    <p>DhruvaPro is fully integrated, the first and indigenous reconfigurable RFIC for navigation with <b>NavIC, GPS, Galileo, and BeiDou</b>, making it a universal solution.</p><br/>
-                    <p>The RFIC is silicon-verified and is developed as a production-level IC with <b>ESD</b> protection, on-chip testing, and circuits capable of operating at extreme temperatures.</p><br/>
-                    <p>The silicon die is packaged in a <b>QFN-32</b> package for evaluation in real environment. DhruvaPro is engineered for excellent performance with low power consumption using patented ideas.</p>
-                  </p>
+                  <div style={{ fontSize: '1rem', color: '#2c3e50', lineHeight: '1.8' }}>
+                    {productsData.aboutDhruvaPro.description.map((text, index) => (
+                      <p key={index} className='pb-3' dangerouslySetInnerHTML={{ __html: text }} />
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -109,8 +82,8 @@ const Products: React.FC = () => {
                   />
                   <div className="card-img-overlay d-flex align-items-end" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)',opacity: 0,transition: 'opacity 0.3s ease'}}>
                     <div className="text-white p-4">
-                      <h5 className="mb-2">Silicon-Proven GNSS RFIC</h5>
-                      <p className="mb-0">Advanced navigation solution for multiple constellations</p>
+                      <h5 className="mb-2">{productsData.aboutDhruvaPro.overlay.title}</h5>
+                      <p className="mb-0">{productsData.aboutDhruvaPro.overlay.description}</p>
                     </div>
                   </div>
                 </div>

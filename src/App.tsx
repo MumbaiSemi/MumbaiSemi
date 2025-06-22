@@ -6,8 +6,14 @@ import AboutUs from './components/AboutUs';
 import Careers from './components/Careers';
 import ContactUs from './components/ContactUs';
 import './App.css';
+import { indexData } from './data';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    document.title = indexData.title;
+  }, []);
+
   return (
     <Router>
       <div className="app">
