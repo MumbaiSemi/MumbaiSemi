@@ -27,13 +27,13 @@ const Home: React.FC = () => {
           <div
             style={{
               color: '#017ce7',
-              fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
+              fontSize: 'clamp(1.5rem, 4vw, 2.2rem)',
               fontWeight: 400,
-              marginBottom: '2.5rem',
+              marginBottom: '4rem',
               fontFamily: 'Oxanium, sans-serif',
               textAlign: 'left',
               width: '100%',
-              maxWidth: '650px'
+              maxWidth: '550px'
             }}
             className="hover-underline home-text"
           >

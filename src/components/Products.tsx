@@ -93,23 +93,9 @@ const Products: React.FC = () => {
                   borderRadius: '1rem',
                 }}>
                   <p style={{ fontSize: '1rem', color: '#2c3e50', lineHeight: '1.8' }}>
-                    DhruvaPro is fully integrated, the first and indigenous reconfigurable RFIC for navigation with <b>NavIC, GPS, Galileo, and BeiDou</b> and is capable of receive signals at multiple frequency bands viz. <b>L5, L2, L1, and S-bands</b>, making it a truly universal solution.
-                  </p>
-                </div>
-                <div className="card border-0 shadow-sm mb-4 pb-1" style={{ 
-                  background: 'linear-gradient(135deg, #e3f0ff 0%, #f8fbff 100%)',
-                  borderRadius: '1rem',
-                }}>
-                  <p style={{ fontSize: '1rem', color: '#2c3e50', lineHeight: '1.8' }}>
-                    The RFIC is silicon-verified and is developed as a production-level IC with <b>ESD</b> protection, on-chip testing, and circuits capable of operating at extreme temperatures. An external controller can program the chip through the <b>serial peripheral interface (SPI)</b> interface.
-                  </p>
-                </div>
-                <div className="card border-0 shadow-sm pb-1" style={{ 
-                  background: 'linear-gradient(135deg, #e3f0ff 0%, #f8fbff 100%)',
-                  borderRadius: '1rem',
-                }}>
-                  <p style={{ fontSize: '1rem', color: '#2c3e50', lineHeight: '1.8' }}>
-                    The silicon die is packaged in a <b>QFN-32</b> package for evaluation in real environment. DhruvaPro is engineered for excellent performance with low power consumption using patented ideas.
+                    <p>DhruvaPro is fully integrated, the first and indigenous reconfigurable RFIC for navigation with <b>NavIC, GPS, Galileo, and BeiDou</b>, making it a universal solution.</p><br/>
+                    <p>The RFIC is silicon-verified and is developed as a production-level IC with <b>ESD</b> protection, on-chip testing, and circuits capable of operating at extreme temperatures.</p><br/>
+                    <p>The silicon die is packaged in a <b>QFN-32</b> package for evaluation in real environment. DhruvaPro is engineered for excellent performance with low power consumption using patented ideas.</p>
                   </p>
                 </div>
               </div>

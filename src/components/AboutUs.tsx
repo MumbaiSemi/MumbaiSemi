@@ -13,23 +13,23 @@ interface TeamMemberProps {
 
 const TeamMember: React.FC<TeamMemberProps> = ({ name, title, education, image, linkedinUrl }) => {
   return (
-    <div className="col-lg-5 col-md-6 mb-4">
+    <div className="col-lg-4 col-md-6 mb-3 mx-4">
       <div className="card border-0 shadow-sm h-100" style={{ 
         background: 'linear-gradient(135deg, #e3f0ff 0%, #f8fbff 100%)',
         borderRadius: '1rem',
         transition: 'transform 0.3s ease'
       }}>
-        <div className="card-body p-4">
+        <div className="card-body">
           <div className="text-center">
             <img 
               src={image}
               alt={name}
-              className="rounded-circle mb-3 border border-4 border-dark"
+              className="rounded-circle mb-2 border border-4 border-dark"
               style={{ width: '200px', height: '200px', objectFit: 'cover' }}
             />
             <h4 className="fw-bold mb-2" style={{ color: '#0d2957' }}>{name}</h4>
             <p className="text-muted mb-3">{title}</p>
-            <p style={{ fontSize: '0.9rem', color: '#2c3e50', lineHeight: '1.6' }}>
+            <p style={{ fontSize: '0.9rem', color: '#2c3e50', lineHeight: '1.2' }}>
               {education}
             </p>
             <a 
@@ -94,7 +94,7 @@ const AboutUs: React.FC = () => {
                 lineHeight: '1.8',
                 maxWidth: '100%'
               }}>
-                We research and innovate to produce disruptive solutions for futuristic challenges to develop high-quality semiconductor chips in India for national and global needs. Our first product, <b>DhruvaPro</b>, is an example of our commitment to delivering best-in-class semiconductor chips for the technical problems of our nation and across the world.
+                We research and innovate to produce disruptive solutions for futuristic challenges to develop high-quality semiconductor chips in India for national and global needs.
               </p>
             </div>
           </div>
@@ -142,7 +142,7 @@ const AboutUs: React.FC = () => {
                           lineHeight: '1.8', 
                           textAlign: 'center',
                           maxWidth: '800px',
-                          padding: '0 2rem'
+                          padding: '0 1rem'
                         }}>
                           At MumbaiSemi, we love to work on challenging problems that demand precision, creativity, and excellent technical skills. We collaborate strongly, learn continuously, and take pride in the quality of our work.
                         </p>
@@ -156,7 +156,7 @@ const AboutUs: React.FC = () => {
                           lineHeight: '1.8', 
                           textAlign: 'center',
                           maxWidth: '800px',
-                          padding: '0 2rem'
+                          padding: '0 1rem'
                         }}>
                           Whether you're just starting your career or have years of tape-outs behind you, you will work alongside people passionate about pushing the limits of chip design.
                         </p>
@@ -170,7 +170,7 @@ const AboutUs: React.FC = () => {
                           lineHeight: '1.8', 
                           textAlign: 'center',
                           maxWidth: '800px',
-                          padding: '0 2rem'
+                          padding: '0 1rem'
                         }}>
                           Diverse perspectives lead to stronger designs. We're proud to be an equal opportunity employer — and we're always looking for curious, driven minds to join us. We want to hear from you if you enjoy solving challenging chip design problems. Please send us a copy of your CV.
                         </p>
